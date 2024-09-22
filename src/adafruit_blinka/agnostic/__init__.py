@@ -8,8 +8,7 @@
     common modules and operations, depending on platform support
 """
 import sys
-import adafruit_platformdetect
-
+from adafruit_blinka.detector import Detector
 # We intentionally are patching into this namespace as module names so skip the name check.
 # pylint: disable=invalid-name
 
@@ -17,7 +16,7 @@ import adafruit_platformdetect
 # detector directly elsewhere, just in case additional indirection is necessary
 # at some later point:
 
-detector = adafruit_platformdetect.Detector()
+detector = Detector()
 chip_id = detector.chip.id
 board_id = detector.board.id
 
